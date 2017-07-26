@@ -1,6 +1,6 @@
 package io.fdlessard.codebites.lombok.domain;
 
-import io.fdlessard.codebites.lombok.TestConstants;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -55,7 +55,29 @@ public class AddressTest {
                 .build();
 
         assertFalse(address.equals(otherAddress));
-
     }
 
+    @Test
+    public void marshalling() throws Exception {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        String jsonString = objectMapper.writeValueAsString(address);
+
+        assertEquals("{\"streetName\":\"A street name\",\"city\":\"A city\",\"province\":\"A province\",\"postalCode\":\"A postal code\",\"country\":\"A country\"}", jsonString);
+    }
+
+    @Test
+    public void marshallingWithMixins() throws Exception {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        objectMapper.addMixIn(Address.class, AddressMixIn.class);
+
+        String jsonString = objectMapper.writeValueAsString(address);
+
+
+        assertEquals("{\"nomDeRue\":\"A street name\",\"city\":\"A city\",\"province\":\"A province\",\"postalCode\":\"A postal code\",\"country\":\"A country\"}", jsonString);
+
+    }
 }
