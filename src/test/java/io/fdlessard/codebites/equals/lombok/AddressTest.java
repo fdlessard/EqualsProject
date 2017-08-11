@@ -1,10 +1,10 @@
-package io.fdlessard.codebites.lombok.domain;
+package io.fdlessard.codebites.equals.lombok;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 
-import static io.fdlessard.codebites.lombok.TestConstants.*;
+import static io.fdlessard.codebites.equals.TestConstants.*;
 import static org.junit.Assert.*;
 
 public class AddressTest {

@@ -1,10 +1,10 @@
-package io.fdlessard.codebites.lombok.domain;
+package io.fdlessard.codebites.equals.lombok;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.fdlessard.codebites.equals.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
 
-import static io.fdlessard.codebites.lombok.TestConstants.*;
 import static org.junit.Assert.*;
 
 public class ExtendedAddressTest {
@@ -14,12 +14,12 @@ public class ExtendedAddressTest {
     @Before
     public void setUp() {
         extendedAddress = ExtendedAddress.builder()
-                .streetName(TEST_STREET_NAME)
-                .city(TEST_CITY)
-                .province(TEST_PROVINCE)
-                .postalCode(TEST_POSTAL_CODE)
-                .country(TEST_COUNTRY)
-                .county(TEST_COUNTY)
+                .streetName(TestConstants.TEST_STREET_NAME)
+                .city(TestConstants.TEST_CITY)
+                .province(TestConstants.TEST_PROVINCE)
+                .postalCode(TestConstants.TEST_POSTAL_CODE)
+                .country(TestConstants.TEST_COUNTRY)
+                .county(TestConstants.TEST_COUNTY)
                 .build();
     }
 
@@ -28,23 +28,23 @@ public class ExtendedAddressTest {
         ExtendedAddress otherExtendedAddress = ExtendedAddress.builder()
                 .build();
 
-        otherExtendedAddress.setStreetName(TEST_STREET_NAME);
-        assertEquals(TEST_STREET_NAME, otherExtendedAddress.getStreetName());
+        otherExtendedAddress.setStreetName(TestConstants.TEST_STREET_NAME);
+        assertEquals(TestConstants.TEST_STREET_NAME, otherExtendedAddress.getStreetName());
 
-        otherExtendedAddress.setCity(TEST_CITY);
-        assertEquals(TEST_CITY, otherExtendedAddress.getCity());
+        otherExtendedAddress.setCity(TestConstants.TEST_CITY);
+        assertEquals(TestConstants.TEST_CITY, otherExtendedAddress.getCity());
 
-        otherExtendedAddress.setProvince(TEST_PROVINCE);
-        assertEquals(TEST_CITY, otherExtendedAddress.getCity());
+        otherExtendedAddress.setProvince(TestConstants.TEST_PROVINCE);
+        assertEquals(TestConstants.TEST_CITY, otherExtendedAddress.getCity());
 
-        otherExtendedAddress.setPostalCode(TEST_POSTAL_CODE);
-        assertEquals(TEST_POSTAL_CODE, otherExtendedAddress.getPostalCode());
+        otherExtendedAddress.setPostalCode(TestConstants.TEST_POSTAL_CODE);
+        assertEquals(TestConstants.TEST_POSTAL_CODE, otherExtendedAddress.getPostalCode());
 
-        otherExtendedAddress.setCountry(TEST_COUNTRY);
-        assertEquals(TEST_COUNTRY, otherExtendedAddress.getCountry());
+        otherExtendedAddress.setCountry(TestConstants.TEST_COUNTRY);
+        assertEquals(TestConstants.TEST_COUNTRY, otherExtendedAddress.getCountry());
 
-        otherExtendedAddress.setCounty(TEST_COUNTY);
-        assertEquals(TEST_COUNTY, otherExtendedAddress.getCounty());
+        otherExtendedAddress.setCounty(TestConstants.TEST_COUNTY);
+        assertEquals(TestConstants.TEST_COUNTY, otherExtendedAddress.getCounty());
     }
 
     @Test

@@ -1,0 +1,33 @@
+Senior Software Developer
+
+SAP Hybris Revenue Cloud
+
+July 2016 – Present
+
+Montreal, Canada Area
+• Development of micro services applications for Quotes and Pricing.
+• Cloud Microservice application development using Java and SpringBoot
+
+Environment:
+Java, Spring Boot, Spring Cloud, PostgreSQL, Git, GitHub, Maven, Jenkins, Cloud Foundry, Microservices, SAP Cloud Platform, Hybris YaaS, JavaScript, SAPUI5.
+
+RatePlan T getFromFuture(Future, Time, Consumer exceptionHandler) {
+
+    try() {
+
+    } catch ()
+    {
+        handleEexception(e)
+        Consumer.accept(e) w
+    }
+
+}
+
+void handleException() {
+throw RatePlanException
+}
+
+T getFromFuture(Future, Time, Function<E> exceptionHandler)
+T getFromFuture(Future, Time, Consumer<E> exceptionHandler)
+
+

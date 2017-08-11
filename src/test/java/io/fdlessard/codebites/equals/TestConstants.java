@@ -1,4 +1,4 @@
-package io.fdlessard.codebites.lombok;
+package io.fdlessard.codebites.equals;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package io.fdlessard.codebites.lombok.domain;
+package io.fdlessard.codebites.equals.lombok;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

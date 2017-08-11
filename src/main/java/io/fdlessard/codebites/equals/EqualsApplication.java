@@ -1,12 +1,12 @@
-package io.fdlessard.codebites.lombok;
+package io.fdlessard.codebites.equals;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LombokApplication {
+public class EqualsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LombokApplication.class, args);
+		SpringApplication.run(EqualsApplication.class, args);
 	}
 }

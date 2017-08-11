@@ -1,13 +1,13 @@
-package io.fdlessard.codebites.lombok.domain;
+package io.fdlessard.codebites.equals.lombok;
 
-import io.fdlessard.codebites.lombok.TestConstants;
+import io.fdlessard.codebites.equals.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.UUID;
 
-import static io.fdlessard.codebites.lombok.TestConstants.*;
+import static io.fdlessard.codebites.equals.TestConstants.*;
 import static org.junit.Assert.*;
 
 public class CustomerTest {
