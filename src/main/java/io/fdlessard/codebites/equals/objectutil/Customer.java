@@ -2,10 +2,11 @@ package io.fdlessard.codebites.equals.objectutil;
 
 import io.fdlessard.codebites.equals.lombok.Address;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-public class Customer {
+public class Customer implements Serializable {
 
     private UUID id;
 
