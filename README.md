@@ -17,3 +17,9 @@ http://www.angelikalanger.com/Articles/JavaSolutions/SecretsOfEquals/Equals.html
 http://www.artima.com/intv/bloch17.html
 http://www.artima.com/intv/bloch17.html
 https://stackoverflow.com/questions/27581/what-issues-should-be-considered-when-overriding-equals-and-hashcode-in-java
+
+### To consider
+
+BigDecimal
+Currency
+inheritance
