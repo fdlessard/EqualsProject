@@ -1,7 +1,5 @@
 package io.fdlessard.codebites.equals;
 
-import org.junit.Test;
-
 public class TestConstants {
 
     private TestConstants() {}
