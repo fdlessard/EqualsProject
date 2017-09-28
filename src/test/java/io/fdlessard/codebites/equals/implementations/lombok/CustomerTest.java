@@ -1,6 +1,8 @@
 package io.fdlessard.codebites.equals.implementations.lombok;
 
 import io.fdlessard.codebites.equals.TestConstants;
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -80,13 +82,12 @@ public class CustomerTest {
     }
 
     @Test
-    public void testEqualsWithJqnoEqualsVerifier() {
-        assertTrue(customer.equals(customer));
-        Customer otherCustomer = Customer.builder()
-                .build();
+    public void testEqualsWithJqnoEqualsVerifier()  {
 
-        assertFalse(customer.equals(otherCustomer));
-
+        EqualsVerifier.forClass(Customer.class)
+                .suppress(Warning.STRICT_INHERITANCE)
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify();
     }
 
 }

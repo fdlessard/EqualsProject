@@ -1,6 +1,8 @@
 package io.fdlessard.codebites.equals.implementations.apache;
 
 import io.fdlessard.codebites.equals.implementations.lombok.Address;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.util.List;
@@ -65,31 +67,30 @@ public class Customer implements Serializable {
     }
 
 
-
-
-
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
+
+        if (o == null || getClass() != o.getClass()) return false;
 
         Customer customer = (Customer) o;
 
-        if (id != null ? !id.equals(customer.id) : customer.id != null) return false;
-        if (firstName != null ? !firstName.equals(customer.firstName) : customer.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(customer.lastName) : customer.lastName != null) return false;
-        if (company != null ? !company.equals(customer.company) : customer.company != null) return false;
-        return addresses != null ? addresses.equals(customer.addresses) : customer.addresses == null;
+        return new EqualsBuilder()
+                .append(id, customer.id)
+                .append(firstName, customer.firstName)
+                .append(lastName, customer.lastName)
+                .append(company, customer.company)
+                .append(addresses, customer.addresses)
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (company != null ? company.hashCode() : 0);
-        result = 31 * result + (addresses != null ? addresses.hashCode() : 0);
-        return result;
+        return new HashCodeBuilder(17, 37)
+                .append(id)
+                .append(firstName)
+                .append(lastName)
+                .append(company)
+                .append(addresses)
+                .toHashCode();
     }
 }

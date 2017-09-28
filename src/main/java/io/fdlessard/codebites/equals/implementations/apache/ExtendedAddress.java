@@ -1,6 +1,8 @@
 package io.fdlessard.codebites.equals.implementations.apache;
 
 import io.fdlessard.codebites.equals.implementations.lombok.Address;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class ExtendedAddress extends Address {
 
@@ -25,23 +27,24 @@ public class ExtendedAddress extends Address {
     }
 
 
-
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ExtendedAddress)) return false;
-        if (!super.equals(o)) return false;
 
-        ExtendedAddress that = (ExtendedAddress) o;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        return county != null ? county.equals(that.county) : that.county == null;
+        ExtendedAddress extendedAddress = (ExtendedAddress) o;
+
+        return new EqualsBuilder()
+                .appendSuper(super.equals(o))
+                .append(county, extendedAddress.county)
+                .isEquals();
     }
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + (county != null ? county.hashCode() : 0);
-        return result;
+        return new HashCodeBuilder(17, 37)
+                .appendSuper(super.hashCode())
+                .append(county)
+                .toHashCode();
     }
 }

@@ -8,7 +8,6 @@ public class CustomerTest {
     @Test
     public void testEqualsWithJqnoEqualsVerifier()  {
         EqualsVerifier.forClass(Customer.class)
-                //    .withRedefinedSubclass(ExtendedAddress.class)
                 .verify();
     }
 

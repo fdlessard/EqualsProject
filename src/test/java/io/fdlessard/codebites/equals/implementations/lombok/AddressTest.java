@@ -2,6 +2,7 @@ package io.fdlessard.codebites.equals.implementations.lombok;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -84,10 +85,10 @@ public class AddressTest {
     }
 
     @Test
-    public void testEqualsWithJqnoEqualsVerifier()  {
-        EqualsVerifier.forClass(io.fdlessard.codebites.equals.implementations.apache.Address.class)
-                .usingGetClass()
-                //    .withRedefinedSubclass(ExtendedAddress.class)
+    public void testEqualsWithJqnoEqualsVerifier() {
+        EqualsVerifier.forClass(Address.class)
+                .withRedefinedSubclass(ExtendedAddress.class)
+                .suppress(Warning.NONFINAL_FIELDS)
                 .verify();
     }
 

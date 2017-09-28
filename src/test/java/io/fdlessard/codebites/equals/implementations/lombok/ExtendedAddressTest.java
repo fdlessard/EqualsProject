@@ -2,6 +2,8 @@ package io.fdlessard.codebites.equals.implementations.lombok;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.fdlessard.codebites.equals.TestConstants;
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -83,5 +85,16 @@ public class ExtendedAddressTest {
 
         assertEquals("{\"city\":\"A city\",\"province\":\"A province\",\"postalCode\":\"A postal code\",\"country\":\"A country\",\"county\":\"A county\",\"nomDeRue\":\"A street name\"}", jsonString);
 
+    }
+
+
+    @Test
+    public void testEqualsWithJqnoEqualsVerifier()  {
+
+        EqualsVerifier.forClass(ExtendedAddress.class)
+                .withRedefinedSuperclass()
+                .suppress(Warning.STRICT_INHERITANCE)
+                .suppress(Warning.NONFINAL_FIELDS)
+                .verify();
     }
 }

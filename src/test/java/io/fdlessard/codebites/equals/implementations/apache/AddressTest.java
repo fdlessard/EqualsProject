@@ -12,9 +12,8 @@ public class AddressTest {
     public void testEqualsWithJqnoEqualsVerifier() {
 
         EqualsVerifier.forClass(Address.class)
-               // .usingGetClass()
+                .usingGetClass()
                 .suppress(Warning.NONFINAL_FIELDS)
-                //    .withRedefinedSubclass(ExtendedAddress.class)
                 .verify();
     }
 
